@@ -1,7 +1,7 @@
 FROM rancher/hyperkube:v1.11.3-rancher1
 
 # remove because we don't need it and it makes the build extremely slow
-RUN apt-get remove --purge azure-cli
+RUN apt-get -y remove --purge azure-cli
 
 RUN apt-get -y update
 RUN apt-get -y install lsb-release
