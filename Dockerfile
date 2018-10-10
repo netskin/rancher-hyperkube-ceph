@@ -16,3 +16,5 @@ RUN echo deb https://download.ceph.com/debian-mimic/ $(lsb_release -sc) main | t
 RUN apt-get -y update
 RUN apt-get -y dist-upgrade
 RUN apt-get -y install ceph-common rbd-nbd
+
+COPY /docker/rbd-wrapper /usr/local/bin/rbd

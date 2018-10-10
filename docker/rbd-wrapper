@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$1" = "map" ]; then
+  # https://github.com/kubernetes/kubernetes/blob/release-1.12/pkg/volume/rbd/rbd_util.go#L362
+  echo "HACK: rbd map denied so rbd-nbd will be used!"
+  exit 1
+fi
+
+exec /usr/bin/rbd "$@"
