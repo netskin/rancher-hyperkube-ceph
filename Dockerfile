@@ -1,4 +1,4 @@
-FROM netskin/hyperkube-amd64:v1.11.3
+FROM netskin/hyperkube-amd64:v1.11.5
 
 RUN clean-install lsb-release apt-transport-https curl gnupg1
 
