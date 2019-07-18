@@ -13,4 +13,8 @@ RUN apt-get -y update
 RUN apt-get -y dist-upgrade
 RUN clean-install rbd-nbd
 
+# these empty files are needed so ceph is not emitting warnings (which break the parsing in k8s)
+RUN touch /etc/ceph/ceph.conf
+RUN touch /etc/ceph/ceph.keyring
+
 COPY /docker/rbd-wrapper /usr/local/bin/rbd
